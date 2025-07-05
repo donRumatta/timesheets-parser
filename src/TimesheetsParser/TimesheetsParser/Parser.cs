@@ -1,5 +1,4 @@
 ﻿using Spectre.Console;
-using System.Globalization;
 using System.Text.RegularExpressions;
 
 namespace TimesheetsParser
@@ -29,11 +28,10 @@ namespace TimesheetsParser
         private async Task InitAsync()
         {
             _contents = await File.ReadAllLinesAsync(_filePath);
+            _currentDate = DateTime.Parse(_contents.First()).AddDays(-1);
 
-            var ruCulture = new CultureInfo("ru-RU");
-            _currentDate = DateTime.Parse(_contents.First(), ruCulture).AddDays(-1);
-
-            AnsiConsole.MarkupLine($"[olive]Start date: {_currentDate:d}[/]");
+            AnsiConsole.MarkupLine($"[olive]Start date: {_currentDate.AddDays(1):d}[/]");
+            AnsiConsole.WriteLine();
         }
 
         public async Task SetProcessed(int lineNumber)
