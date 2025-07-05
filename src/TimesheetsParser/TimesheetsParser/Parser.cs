@@ -71,7 +71,7 @@ namespace TimesheetsParser
 
                 if (item.StartsWith(_processedTag))
                 {
-                    AnsiConsole.MarkupLine($"[orangered1]SKIPPED {item}[/]");
+                    AnsiConsole.MarkupLineInterpolated($"[orangered1]SKIPPED {item}[/]");
 
                     continue;
                 }

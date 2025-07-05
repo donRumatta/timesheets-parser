@@ -5,7 +5,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <PackageId>donRumatta.Utilities.TimesheetsParser</PackageId>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
     <Authors>donRumatta</Authors>
     <Description>Utility for preparing timesheets for logging your work to some accounting system.</Description>
     <PackageTags>timesheet parse-timesheets log-work</PackageTags>
