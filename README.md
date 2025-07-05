@@ -1,1 +1,1 @@
-# timesheets-parser
+Library for preparing timesheets for logging your work to some accounting system.
