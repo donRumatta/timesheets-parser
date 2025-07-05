@@ -32,15 +32,12 @@ namespace TimesheetsParser
 
             var ruCulture = new CultureInfo("ru-RU");
             _currentDate = DateTime.Parse(_contents.First(), ruCulture).AddDays(-1);
+
+            AnsiConsole.MarkupLine($"[olive]Start date: {_currentDate:d}[/]");
         }
 
         public async Task SetProcessed(int lineNumber)
         {
-            if (_contents is null)
-            {
-                throw new Exception($"Call {nameof(InitAsync)}() before {nameof(Parse)}().");
-            }
-
             var line = _contents[lineNumber];
             line = $"{_processedTag} {line}";
             _contents[lineNumber] = line;
@@ -50,11 +47,6 @@ namespace TimesheetsParser
 
         public List<TimeSheet> Parse()
         {
-            if (_contents is null)
-            {
-                throw new Exception($"Call {nameof(InitAsync)}() before {nameof(Parse)}().");
-            }
-
             var result = new List<TimeSheet>();
 
             var line = 0;
